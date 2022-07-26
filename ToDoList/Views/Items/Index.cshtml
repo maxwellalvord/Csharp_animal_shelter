@@ -1,3 +1,7 @@
+@{
+  Layout = "_Layout";
+}
+
 @using ToDoList.Models;
 @model List<ToDoList.Models.Item>;
 
@@ -6,8 +10,12 @@
 <ul>
   @foreach(Item item in Model)
   {
-    <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId })</li>
+    <li>@Html.ActionLink($"{item.Name}", "Details", new { id = item.Id })</li>
+    <li>@Html.ActionLink($"{item.Gender}", "Details", new { id = item.Id })</li>
+    <li>@Html.ActionLink($"{item.Breed}", "Details", new { id = item.Id })</li>
+    <li>@Html.ActionLink($"{item.Date}", "Details", new { id = item.Id })</li>
+    <li>@Html.ActionLink($"{item.Type}", "Details", new { id = item.Id })</li>
   }
 </ul>
 
-<p>@Html.ActionLink("Add new item", "Create")</p>
+<p>@Html.ActionLink("Add new Animal", "Create")</p>

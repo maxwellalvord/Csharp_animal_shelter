@@ -6,7 +6,7 @@ namespace ToDoList.Models
   {
     private static List<Category> _instances = new List<Category> {};
     public string Name { get; set; }
-    public int Id { get; }
+    public int Id { get; set;}
     public List<Item> Items { get; set; }
 
     public void AddItem(Item item)

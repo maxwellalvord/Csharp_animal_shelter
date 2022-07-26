@@ -16,7 +16,7 @@ namespace ToDoList.Controllers
 
     public ActionResult Index()
     {
-      List<Item> model = _db.Items.ToList();
+      List<Item> model = _db.Animal_table.ToList();
       return View(model);
     }
 
@@ -28,14 +28,14 @@ namespace ToDoList.Controllers
     [HttpPost]
     public ActionResult Create(Item item)
     {
-        _db.Items.Add(item);
+        _db.Animal_table.Add(item);
         _db.SaveChanges();
         return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-        Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
+        Item thisItem = _db.Animal_table.FirstOrDefault(item => item.Id == id);
         return View(thisItem);
     }
   }
